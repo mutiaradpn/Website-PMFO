@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block history %}
+  background-color:#191784;
+  color:#ffffff;
+{% endblock %}
+{% block iconinputber %}
+    {{ url_for('static', filename='iconWhite.png') }} 
+{% endblock %}
+{% block isi %}
+
+<div class="w3-padding-64 w3-content w3-text-white" id="contact">
+    <h2 class="w3-text-white">History</h2>
+
+    <table class="w3-table w3-bordered w3-white">
+        <thead>
+          <tr>
+            <th scope="col">Tanggal</th>
+            <th scope="col">Kanal</th>
+            <th scope="col">Spasi kanal</th>
+            <th scope="col">Panjang</th>
+            <th scope="col">Power</th>
+            <th scope="col">Q-Factor</th>
+            <th scope="col">Redaman</th>
+            <th scope="col">OSNR</th>
+            <th scope="col">Hasil Hitung</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+            <tr>
+                <th scope="row">{{row[1]}}</th>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+                <td>{{row[9]}}</td>
+              </tr>
+          {% endfor %}   
+        </tbody>
+      </table>
+  <!-- End Contact Section -->
+  </div>
+{% endblock %}

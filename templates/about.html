@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block about %}
+  background-color:#191784;
+  color:#ffffff;
+{% endblock %}
+{% block iconinputber %}
+    {{ url_for('static', filename='iconWhite.png') }} 
+{% endblock %}
+{% block isi %}
+<div class="w3-content w3-justify w3-text-white w3-padding-64" id="about">
+    <h2 class="w3-text-white">Tentang PMFO</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p class="teks">PMFO merupakan sebuah Website yang dirancang untuk mempermudah teknisi dalam menentukan jangka waktu kabel serat optik untuk melakukan maintenance atau perbaikan.</p>
+    <P class="teks">Website ini sangat praktis digunakan dan mempercepat prediksi maintenance pada kabel serat optik.</P>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="w3-bar w3-border w3-light-grey" style="position:fixed;top:0px">
+    <a href="/home" class="w3-bar-item w3-button w3-left"><i class="fa fa-arrow-left"></i> Home</a>
+    <a href="/" class="w3-bar-item w3-button w3-red w3-right"><i class="fa fa-power-off"></i> Logout</a>
+  </div>
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <div class="w3-bar w3-border w3-light-grey">
+    <div class='box'></div>
+  </div>
+  <a href="/about" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="{% block about %}{% endblock %}">
+    <i class="fa fa-info-circle w3-xxlarge"></i>
+    <p>About</p>
+  </a>
+  <a href="/InputBER" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="{% block inputber %}{% endblock %}">
+    <img src={% block iconinputber %}{% endblock %} style="width:5rem;">
+    <p>Input Nilai</p>
+  </a>
+  <a href="/History" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="{% block history %}{% endblock %}">
+    <i class="fa fa-history w3-xxlarge"></i>
+    <p>History</p>
+  </a>
+</nav>
+
+
+<div class="w3-padding-large" id="main">
+  <div id="contentimage">
+    <img src={{ url_for('static', filename='logo.png') }} class="ribbon" alt="" />
+  </div>
+  {% block isi %}{% endblock %}
+
+  <footer class="w3-content w3-padding-64 w3-text-white w3-xlarge">
+    <img src={{ url_for('static', filename='primer-vertikal.png') }} width="220px" alt="" />
+    <img src={{ url_for('static', filename='logo-fte-1-1.webp') }} width="400px" alt="" style="margin-left:50px;margin-top:0" />
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">Adzka</a></p>
+
+  </footer>
+
+</div>
+
+</body>
+</html>

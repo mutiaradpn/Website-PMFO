@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+{% block inputber %}
+  background-color:#191784;
+  color:#ffffff;
+{% endblock %}
+{% block iconinputber %}
+    {{ url_for('static', filename='icon.png') }} 
+{% endblock %}
+{% block isi %}
+<div class="w3-padding-64 w3-content w3-text-white" id="contact">
+    <h2 class="w3-text-white">Input Nilai</h2>
+
+    <form action="/InputBER" method="post">
+      <p>
+        <label for="kanal">Kanal</label>
+      </p>
+      <p><select class="w3-select" name="kanal" id="kanal">
+        <option value="" disabled selected>Pilih Kanal</option>
+        <option value="4">4</option>
+        <option value="8">8</option>
+        <option value="16">16</option>
+      </select>
+      </p>
+      <p>
+        <label for="spasi">Spasi Kanal</label>
+      </p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="50 - 200" required step="any" name="spasi" id="spasi" min="50" max="200">
+      </p>
+      <p>
+        <label for="power">Power (dBm)</label>
+      </p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="0 - 5" step="any" required min="0" max="5"
+        name="power" id="power">
+      </p>
+      <p>
+        <label for="panjang">Panjang Kabel (km)</label>
+      </p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="50 - 70" required name="panjang" step="any" id="panjang" min="50" max="70">
+      </p>
+      <p>
+        <label for="redaman">Nilai Redaman (dBm/km)</label>
+      </p>
+      <p><input class="w3-input w3-padding-16" type="number" step="any" required name="redaman" placeholder="0 - 0.5" id="redaman" min="0" max="0.5">
+      </p>
+      <p>
+        <label for="osnr">OSNR (dB)</label>
+      </p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="21 - 36" step="any" required name="osnr" id="osnr" min="21" max="36">
+      </p>
+      <p>
+        <label for="qfactor">Q-Factor</label>
+      </p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="4 - 16" required name="qfactor" step="any" id="qfactor" min="4" max="16">
+      </p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SUBMIT
+        </button>
+      </p>
+    </form>
+    <tr>
+      {% if hasilber %}
+      <script>
+        alert("Berdasarkan nilai BER dan OSNR, hasil dari inputan tersebut {{hasilber}}")
+      </script>
+      {%endif%}
+    </tr>
+  <!-- End Contact Section -->
+  </div>
+{% endblock %}

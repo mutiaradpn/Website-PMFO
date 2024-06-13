@@ -1,0 +1,7 @@
+ini adalah aplikasi deteksi dini kabel fiber optik.
+cara penggunaan:
+1. install dulu xampp
+2. abis itu buka aja vscode dengan open folder ke folder itu
+3. buka terminal lalu new terminal
+4. di terminal nya, masukin python app.py
+5. jika flask belum terinstall, masukin di terminal pip install flask dulu baru ulangi step nomer 4
